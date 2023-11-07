@@ -65,7 +65,11 @@ class CircularSliderAppearance {
   }
 
   List<Color>? get _customTrackColors {
-  	return customColors?.trackColors;
+    return customColors?.trackColors;
+  }
+
+  List<Color>? get _customBigSmallDotColors {
+    return customColors?.bigSmallDotColors;
   }
 
   double? get _gradientStartAngle => customColors?.gradientStartAngle;
@@ -81,6 +85,10 @@ class CircularSliderAppearance {
 
   Color get trackColor => _customTrackColor ?? _defaultTrackColor;
   List<Color>? get trackColors => _customTrackColors;
+
+  /// list of two colors for the first for the big dot and second for the small dot
+  List<Color>? get bigSmallDotColors => _customBigSmallDotColors;
+
   List<Color> get progressBarColors =>
       _customProgressBarColors ?? _defaultBarColors;
   double get gradientStartAngle =>
@@ -164,6 +172,7 @@ class CustomSliderColors {
   final double? gradientStartAngle;
   final double? gradientEndAngle;
   final List<Color>? trackColors;
+  final List<Color>? bigSmallDotColors;
   final double? trackGradientStartAngle;
   final double? trackGradientEndAngle;
   final bool dynamicGradient;
@@ -180,6 +189,7 @@ class CustomSliderColors {
       this.gradientStartAngle,
       this.gradientEndAngle,
       this.trackColors,
+      this.bigSmallDotColors,
       this.trackGradientStartAngle,
       this.trackGradientEndAngle,
       this.hideShadow,
